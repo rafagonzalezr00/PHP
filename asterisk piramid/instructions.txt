@@ -1,0 +1,4 @@
+Given a certain number of rows from the user, process a pyramid made of asterisks with the pattern shown below (example for 3 rows):
+*
+***
+*****

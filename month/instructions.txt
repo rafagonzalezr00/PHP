@@ -1,0 +1,7 @@
+For this PHP exercise, first create an array called $months. Use the names of the months as keys, and the number of days for each month as values. For February, use the following for your value: "28 days, if leap year 29".
+
+Next, write a function to create an option element for a form's select field. Make sure each option will be upper case. Both the array and the function should precede the HTML for the page.
+
+Once again, you will be requesting user input. Create a form for the user with the request, "Please choose a month." Next, provide a select field with the months as options, looping through the array you created and using the function to create the option elements.
+
+When the user clicks the submit button, return the statement "The month of $month has $number days.", where $month is the name of the month the user chose, and $number is the number of days. Be sure to include a different response for February.
