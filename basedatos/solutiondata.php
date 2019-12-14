@@ -1,11 +1,11 @@
 <?php
-if (mysqli_connect("localhost", "root", "glorioso1*") ){
+if (mysqli_connect("localhost", "root", "usuario") ){
     echo "<p>MySQL le ha dado permiso a PHP para ejecutar consultas con ese usuario y clave</p>";
 }
 else{
     echo "<p>MySQL no conoce ese usuario y password, y rechaza el intento de conexión</p>";
 }
-$conexion=mysqli_connect("localhost", "root", "glorioso1*");
+$conexion=mysqli_connect("localhost", "root", "usuario");
 ?>
 <html>
 <head>
@@ -104,7 +104,7 @@ $conexion=mysqli_connect("localhost", "root", "glorioso1*");
                 
                 <tr align="center">
                     <td><?php echo $fila["idauthor"]; ?></td>
-                    <td><?php echo $fila["nameserie"]; ?></td>
+                    <td><?php echo $fila["nameseries"]; ?></td>
                     <td><?php echo $fila["yearserie"]; ?></td>
                     <td><?php echo $fila["durationserie"]; ?></td>
                     <?php
