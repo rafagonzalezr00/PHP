@@ -29,7 +29,7 @@
             echo "</br>";
             echo "</br>";
             mysqli_select_db ($conexion, "ejerciciowai");
-            if($tabla=="authors")
+            if(strlen(strstr($tabla, "authors"))>0)
             {
                 $authors = mysqli_query ($conexion, "select * from authors;");
                 while ($fila=mysqli_fetch_array($authors, MYSQLI_ASSOC)){
@@ -48,10 +48,13 @@
                     <input type="submit">
                 </form>
                 <?php
-                    $nombre=$_POST["nombre"];
-                    $campo=$_POST["campo"];
-                    $nuevoval=$_POST["nuevovalor"];/* 
-                    $consulta="update authors set " .$campo. "="" .$nuevoval. ""where nameauhtor="" .$nombre. """; */
+                    $nombr=$_POST["nombre"];
+                    $camp=$_POST["campo"];
+                    $nuevoval=$_POST["nuevovalor"];
+                    $nombre='"' .$nombr. '"';
+                    $campo='"' .$camp. '"';
+                    $nuevovalor='"' .$nombr. '"';
+                    $consulta="update authors set " .$campo. "=" .$nuevovalor. "where nameauhtor=" .$nombre. ";";
                     echo $consulta;
                     $datos = mysqli_query ($conexion, $consulta);
                     if($datos){

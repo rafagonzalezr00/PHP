@@ -24,7 +24,6 @@
         </form>
         <?php
             $conexion=mysqli_connect("localhost", "root", "usuario");
-            $db="ejerciciowai";
             $tabla=$_POST["tabla"];
             $consulta="select * from " .$tabla;
             echo "</br>";

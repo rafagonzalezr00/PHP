@@ -24,144 +24,102 @@
         </form>
         <?php
             $conexion=mysqli_connect("localhost", "root", "usuario");
-            $db="ejerciciowai";
             $tabla=$_POST["tabla"];
-            $consulta="select * from " .$tabla;
             echo "</br>";
-            echo "</br>";
-            echo $consulta;
             echo "</br>";
             mysqli_select_db ($conexion, "ejerciciowai");
-            if(strlen(strstr($consulta, "authors"))>0){
+            if(strlen(strstr($tabla, "authors"))>0){
+                echo "Insert into " .$tabla;
                 ?>
-                <table>
-                    <tr align="center">
-                        <td>Nombre</td>
-                        <td>Ciudad</td>
-                        <td>Edad</td>
-                    </tr>
-                        <?php
-                            $datos = mysqli_query ($conexion, $consulta);
-                            while ($fila=mysqli_fetch_array($datos, MYSQLI_ASSOC)){
-                        ?>
-                    
-                    <tr align="center">
-                        <td><?php echo $fila["nameauthor"]; ?></td>
-                        <td><?php echo $fila["city"]; ?></td>
-                        <td><?php echo $fila["age"]; ?></td>
-                        <?php
-                            }
-                        ?>
-                    </tr>
-                </table>
+                    <form action="" method="POST">
+                        <p>Name: <input type="text" name="name"></p>
+                        <p>City: <input type="text" name="city"></p>
+                        <p>Age: <input type="text" name="age"></p>
+                        <input type="submit" value="Insert">
+                    </form>
                 <?php
+                    $nam=$_POST["name"];
+                    $cit=$_POST["city"];
+                    $ag=$_POST["age"];
+                    $name='"' .$nam. '"';
+                    $city='"' .$cit. '"';
+                    $age='"' .$ag. '"';
+                    $consulta="insert into author(name, city, age) values (" .$name. "," .$city. "," .$age. ");";
+                    mysqli_query($conexion, $consulta);
             }
-            if(strlen(strstr($consulta, "songs"))>0){
+            if(strlen(strstr($tabla, "songs"))>0){
+                echo "Insert into " .$tabla;
                 ?>
-                <table>
-                    <tr align="center">
-                        <td>Name Autor</td>
-                        <td>Nombre</td>
-                        <td>Año</td>
-                        <td>Disco</td>
-                        <td>Duracion(s)</td>
-                    </tr>
-                        <?php
-                            $consulta="select a.nameauthor, s.* from authors a join songs s on s.idauthor=a.id;";
-                            $datos = mysqli_query ($conexion, $consulta);
-                            while ($fila=mysqli_fetch_array($datos, MYSQLI_ASSOC)){
-                        ?>
-                    
-                    <tr align="center">
-                        <td><?php echo $fila["nameauthor"]; ?></td>
-                        <td><?php echo $fila["namesong"]; ?></td>
-                        <td><?php echo $fila["yearsong"]; ?></td>
-                        <td><?php echo $fila["disc"]; ?></td>
-                        <td><?php echo $fila["durationsong"]; ?></td>
-                        <?php
-                            }
-                        ?>
-                    </tr>
-                </table>
+                    <form action="" method="POST">
+                        <p>Name: <input type="text" name="name"></p>
+                        <p>City: <input type="text" name="city"></p>
+                        <p>Age: <input type="text" name="age"></p>
+                        <input type="submit" value="Insert">
+                    </form>
                 <?php
+                    $nam=$_POST["name"];
+                    $cit=$_POST["city"];
+                    $ag=$_POST["age"];
+                    $name='"' .$nam. '"';
+                    $city='"' .$cit. '"';
+                    $age='"' .$ag. '"';
+                    $consulta="insert into author(name, city, age) values (" .$name. "," .$city. "," .$age. ");";
+                    mysqli_query($conexion, $consulta);
             }
-            if(strlen(strstr($consulta, "series"))>0){
+            if(strlen(strstr($tabla, "films"))>0){
+                echo "Insert into " .$tabla;
                 ?>
-                <table>
-                    <tr align="center">
-                        <td>Name Autor</td>
-                        <td>Nombre</td>
-                        <td>Año</td>
-                        <td>Duracion(capitulos)</td>
-                    </tr>
-                        <?php
-                            $consulta="select a.nameauthor, s.* from authors a join series s on s.idauthor=a.id;";
-                            $datos = mysqli_query ($conexion, $consulta);
-                            while ($fila=mysqli_fetch_array($datos, MYSQLI_ASSOC)){
-                        ?>
-                    
-                    <tr align="center">
-                        <td><?php echo $fila["nameauthor"]; ?></td>
-                        <td><?php echo $fila["nameseries"]; ?></td>
-                        <td><?php echo $fila["yearserie"]; ?></td>
-                        <td><?php echo $fila["durationserie"]; ?></td>
-                        <?php
-                            }
-                        ?>
-                    </tr>
-                </table>
+                    <form action="" method="POST">
+                        <p>Name: <input type="text" name="name"></p>
+                        <p>City: <input type="text" name="city"></p>
+                        <p>Age: <input type="text" name="age"></p>
+                        <input type="submit" value="Insert">
+                    </form>
                 <?php
+                    $nam=$_POST["name"];
+                    $cit=$_POST["city"];
+                    $ag=$_POST["age"];
+                    $name='"' .$nam. '"';
+                    $city='"' .$cit. '"';
+                    $age='"' .$ag. '"';
+                    $consulta="insert into author(name, city, age) values (" .$name. "," .$city. "," .$age. ");";
+                    mysqli_query($conexion, $consulta);
             }
-            if(strlen(strstr($consulta, "images"))>0){
+            if(strlen(strstr($tabla, "series"))>0){
+                echo "Insert into " .$tabla;
                 ?>
-                <table>
-                    <tr align="center">
-                        <td>Name Author</td>
-                        <td>Nombre</td>
-                        <td>Año</td>
-                    </tr>
-                        <?php
-                            $consulta="select a.nameauthor, i.* from authors a join images i on i.idauthor=a.id;";
-                            $datos = mysqli_query ($conexion, $consulta);
-                            while ($fila=mysqli_fetch_array($datos, MYSQLI_ASSOC)){
-                        ?>
-                    
-                    <tr align="center">
-                        <td><?php echo $fila["nameauthor"]; ?></td>
-                        <td><?php echo $fila["nameimage"]; ?></td>
-                        <td><?php echo $fila["yearimage"]; ?></td>
-                        <?php
-                            }
-                        ?>
-                    </tr>
-                </table>
+                    <form action="" method="POST">
+                        <p>Name: <input type="text" name="name"></p>
+                        <p>City: <input type="text" name="city"></p>
+                        <p>Age: <input type="text" name="age"></p>
+                        <input type="submit" value="Insert">
+                    </form>
                 <?php
+                    $nam=$_POST["name"];
+                    $cit=$_POST["city"];
+                    $ag=$_POST["age"];
+                    $name='"' .$nam. '"';
+                    $city='"' .$cit. '"';
+                    $age='"' .$ag. '"';
+                    $consulta="insert into author(name, city, age) values (" .$name. "," .$city. "," .$age. ");";
+                    mysqli_query($conexion, $consulta);
             }
-            if(strlen(strstr($consulta, "films"))>0){
+            if(strlen(strstr($tabla, "images"))>0){
+                echo "Insert into " .$tabla;
                 ?>
-                <table>
-                    <tr align="center">
-                        <td>Name Autor</td>
-                        <td>Nombre</td>
-                        <td>Año</td>
-                        <td>Duracion(min)</td>
-                    </tr>
-                        <?php
-                            $consulta="select a.nameauthor, f.* from authors a join films f on f.idauthor=a.id;";
-                            $datos = mysqli_query ($conexion, $consulta);
-                            while ($fila=mysqli_fetch_array($datos, MYSQLI_ASSOC)){
-                        ?>
-                    <tr align="center">
-                        <td><?php echo $fila["nameauthor"]; ?></td>
-                        <td><?php echo $fila["namefilm"]; ?></td>
-                        <td><?php echo $fila["yearfilm"]; ?></td>
-                        <td><?php echo $fila["durationfilm"]; ?></td>
-                        <?php
-                            }
-                        ?>
-                    </tr>
-                </table>
+                    <form action="" method="POST">
+                        <p>Name: <input type="text" name="name"></p>
+                        <p>Idauthor: <input type="number" name="idauthor"></p>
+                        <p>Year: <input type="number" name="year"></p>
+                        <input type="submit" value="Insert">
+                    </form>
                 <?php
+                    $nam=$_POST["name"];
+                    $idaut=$_POST["idauthor"];
+                    $year=$_POST["year"];
+                    $name='"' .$nam. '"';
+                    $consulta="insert into images(nameimage, idauthor, yearimage) values (" .$name. "," .$idaut. "," .$year. ");";
+                    mysqli_query($conexion, $consulta);
             }
         ?>
     </body>
