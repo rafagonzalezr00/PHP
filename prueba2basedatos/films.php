@@ -105,12 +105,13 @@
                 $campo=$_POST["campo"];
                 $nuevoval=$_POST["nuevoval"];
                 $nombre=$_POST["nombre"];
-                if($campo="yearfilm" or $campo="durationfilm"){
-                    $consulta='update films set' .$campo. '=' .$nuevoval. ' where namefilm="' .$nombre. '";';
+                if($campo==="yearfilm" or $campo==="durationfilm"){
+                    $consulta='update films set ' .$campo. '=' .$nuevoval. ' where namefilm="' .$nombre. '";';
                 }
                 else{
-                    $consulta='update films set' .$campo. '="' .$nuevoval. '" where namefilm="' .$nombre. '";';
+                    $consulta='update films set ' .$campo. '="' .$nuevoval. '" where namefilm="' .$nombre. '";';
                 }
+                echo $consulta;
                 $datos = mysqli_query ($conexion, $consulta);
                 if($datos){
                     echo "Modificado con exito";

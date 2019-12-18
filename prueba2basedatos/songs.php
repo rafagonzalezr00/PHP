@@ -107,12 +107,13 @@
                 $campo=$_POST["campo"];
                 $nuevoval=$_POST["nuevoval"];
                 $nombre=$_POST["nombre"];
-                if($campo="duration" or $campo="yearsong"){
-                    $consulta='update songs set' .$campo. '=' .$nuevoval. ' where nameauthor="' .$nombre. '";';
+                if($campo==="yearsong" or $campo==="durationsong"){
+                    $consulta='update songs set ' .$campo. '=' .$nuevoval. ' where namesong="' .$nombre. '";';
                 }
                 else{
-                    $consulta='update songs set' .$campo. '="' .$nuevoval. '" where nameauthor="' .$nombre. '";';
+                    $consulta='update songs set ' .$campo. '="' .$nuevoval. '" where namesong="' .$nombre. '";';
                 }
+                echo $consulta;
                 $datos = mysqli_query ($conexion, $consulta);
                 if($datos){
                     echo "Modificado con exito";

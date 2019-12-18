@@ -103,12 +103,14 @@
                 $campo=$_POST["campo"];
                 $nuevoval=$_POST["nuevoval"];
                 $nombre=$_POST["nombre"];
-                if($campo="age"){
-                    $consulta='update authors set' .$campo. '=' .$nuevoval. ' where nameauthor="' .$nombre. '";';
+                mysqli_query($conexion, "SET SQL_SAFE_UPDATES=0;");
+                if($campo==="age"){
+                    $consulta='update authors set ' .$campo. '=' .$nuevoval. ' where nameauthor="' .$nombre. '";';
                 }
                 else{
-                    $consulta='update authors set' .$campo. '="' .$nuevoval. '" where nameauthor="' .$nombre. '";';
+                    $consulta='update authors set ' .$campo. '="' .$nuevoval. '" where nameauthor="' .$nombre. '";';
                 }
+                echo $consulta;
                 $datos = mysqli_query ($conexion, $consulta);
                 if($datos){
                     echo "Modificado con exito";

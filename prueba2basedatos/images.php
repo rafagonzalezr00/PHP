@@ -103,12 +103,13 @@
                 $campo=$_POST["campo"];
                 $nuevoval=$_POST["nuevoval"];
                 $nombre=$_POST["nombre"];
-                if($campo="year"){
-                    $consulta='update images set' .$campo. '=' .$nuevoval. ' where nameauthor="' .$nombre. '";';
+                if($campo==="yearimage"){
+                    $consulta='update images set ' .$campo. '=' .$nuevoval. ' where nameimage="' .$nombre. '";';
                 }
                 else{
-                    $consulta='update images set' .$campo. '="' .$nuevoval. '" where nameauthor="' .$nombre. '";';
+                    $consulta='update images set ' .$campo. '="' .$nuevoval. '" where nameimage="' .$nombre. '";';
                 }
+                echo $consulta;
                 $datos = mysqli_query ($conexion, $consulta);
                 if($datos){
                     echo "Modificado con exito";
